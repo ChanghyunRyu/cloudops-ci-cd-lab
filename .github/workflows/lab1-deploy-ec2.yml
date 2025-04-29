@@ -1,0 +1,16 @@
+name: Deploy temp EC2 via Jenkins
+
+on:
+    workflow_dispatch:
+
+
+jobs:
+    trigger-jenkins-deploy:
+        runs-on: ubuntu-latest
+    
+        steps:
+            - name: Trigger Jenkins deploy ec2 job
+              run: |
+                curl -X POST "$JENKINS_URL"/job/deploy-ec2/build" --user "$JENKINS_USER:$JENKINS_TOKEN"
+        
+        
