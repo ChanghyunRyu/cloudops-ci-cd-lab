@@ -11,6 +11,6 @@ jobs:
         steps:
             - name: Trigger Jenkins deploy ec2 job
               run: |
-                curl -X POST "$JENKINS_URL"/job/deploy-ec2/build" --user "$JENKINS_USER:$JENKINS_TOKEN"
+                curl -X POST "$JENKINS_URL"/job/deploy-ec2/build --user "$JENKINS_USER:$JENKINS_TOKEN"
         
         
