@@ -1,0 +1,18 @@
+name: Deploy Test EC2
+
+on:
+  workflow_dispatch:
+
+jobs:
+  trigger-jenkins:
+    runs-on: ubuntu-latest
+    env:
+      JENKINS_USER: ${{ secrets.JENKINS_USER }}
+      JENKINS_TOKEN: ${{ secrets.JENKINS_TOKEN }}
+      JENKINS_HOST: ${{ secrets.JENKINS_URL }}
+
+    steps:
+      - name: Trigger Jenkins Job
+        run: |
+          curl -X POST "$JENKINS_HOST/job/destroy-ec2/build" \
+            -u "$JENKINS_USER:$JENKINS_TOKEN"
