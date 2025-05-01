@@ -9,9 +9,10 @@ jobs:
     env:
       JENKINS_USER: ${{ secrets.JENKINS_USER }}
       JENKINS_TOKEN: ${{ secrets.JENKINS_TOKEN }}
+      JENKINS_HOST: ${{ secrets.JENKINS_URL }}
 
     steps:
       - name: Trigger Jenkins Job
         run: |
-          curl -X POST "http://<JENKINS_HOST>:8080/deploy-ec2/deploy-ec2/build" \
+          curl -X POST "http://$JENKINS_HOST:8080/deploy-ec2/deploy-ec2/build" \
             -u "$JENKINS_USER:$JENKINS_TOKEN"
