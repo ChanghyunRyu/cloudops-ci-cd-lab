@@ -1,4 +1,4 @@
-name: Deploy Test EC2
+name: Destroy Test EC2
 
 on:
   workflow_dispatch:
