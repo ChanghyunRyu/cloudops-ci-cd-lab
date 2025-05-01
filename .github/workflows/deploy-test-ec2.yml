@@ -1,4 +1,4 @@
-name: Trigger Jenkins Job
+name: Deploy Test EC2
 
 on:
   workflow_dispatch:
