@@ -14,5 +14,5 @@ jobs:
     steps:
       - name: Trigger Jenkins Job
         run: |
-          curl -X POST "http://$JENKINS_HOST:8080/deploy-ec2/deploy-ec2/build" \
+          curl -X POST "$JENKINS_HOST:8080/deploy-ec2/deploy-ec2/build" \
             -u "$JENKINS_USER:$JENKINS_TOKEN"
