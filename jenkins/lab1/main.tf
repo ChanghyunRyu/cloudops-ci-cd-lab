@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "cloudops-tfstate-bucket"              # ← 실제 존재하는 S3 버킷 이름으로 바꾸세요
-    key    = "lab1-deploy-ec2/terraform.tfstate"     # ← tfstate가 저장될 경로
+    key    = "lab1/terraform.tfstate"     # ← tfstate가 저장될 경로
     region = "ap-northeast-2"
   }
 }
