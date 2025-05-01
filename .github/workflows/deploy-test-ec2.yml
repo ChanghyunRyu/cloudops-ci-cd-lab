@@ -1,0 +1,17 @@
+name: Trigger Jenkins Job
+
+on:
+  workflow_dispatch:
+
+jobs:
+  trigger-jenkins:
+    runs-on: ubuntu-latest
+    env:
+      JENKINS_USER: ${{ secrets.JENKINS_USER }}
+      JENKINS_TOKEN: ${{ secrets.JENKINS_TOKEN }}
+
+    steps:
+      - name: Trigger Jenkins Job
+        run: |
+          curl -X POST "http://<JENKINS_HOST>:8080/job/deploy-ec2/build" \
+            -u "$JENKINS_USER:$JENKINS_TOKEN"
