@@ -44,3 +44,6 @@ sudo apt install terraform -y
 
 terraform -version
 
+# Jenkins 계정에 aws 권한 추가
+sudo su -jenkins
+aws configure

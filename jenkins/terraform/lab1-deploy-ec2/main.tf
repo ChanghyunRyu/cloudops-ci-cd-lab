@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "cloudops-tfstate-bucket"
+    key    = "lab1-deploy-ec2/terraform.tfstate"
+    region = "ap-northeast-2"
+  }
+}
+
 provider "aws" {
   region = "ap-northeast-2"
 }
